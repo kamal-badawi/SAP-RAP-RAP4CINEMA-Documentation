@@ -1,0 +1,13 @@
+.sapFAvatarImageHolder {
+    display: inline-block; 
+    animation: rotateAvatar 5s linear infinite;
+}
+
+@keyframes rotateAvatar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

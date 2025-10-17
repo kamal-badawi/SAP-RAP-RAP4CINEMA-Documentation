@@ -1,18 +1,422 @@
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
     <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
-        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
     </edmx:Reference>
     <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
-        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
-    </edmx:Reference>
-    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
-        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata4/sap/zss25_r4c_sb_kino_a5/srvd/sap/zss25_r4c_sd_kino_a4/0001/$metadata">
-        <edmx:Include Namespace="com.sap.gateway.srvd.zss25_r4c_sd_kino_a4.v0001" Alias="SAP__self"/>
+        <edmx:Include Namespace="com.sap.gateway.srvd.zss25_r4c_sd_kino_a4.v0001" Alias="SAP__self" />
     </edmx:Reference>
+
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <!-- ========================== -->
+            <!-- General -->
+            <!-- ========================== -->
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/VerkaufId">
+                <Annotation Term="Common.Label" String="{@i18n>VerkaufId}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/MitarbeiterFoto">
+                <Annotation Term="Common.Label" String="{@i18n>MitarbeiterFoto}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/Verkaufsdatum">
+                <Annotation Term="Common.Label" String="{@i18n>Verkaufsdatum}" />
+            </Annotations>
+
+            <!-- ========================== -->
+            <!-- Visitor -->
+            <!-- ========================== -->
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/BesucherName">
+                <Annotation Term="Common.Label" String="{@i18n>BesucherName}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/BesucherIstErlaubt">
+                <Annotation Term="Common.Label" String="{@i18n>BesucherIstErlaubt}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/BesucherAltersgruppeURL">
+                <Annotation Term="Common.Label" String="{@i18n>BesucherAltersgruppeURL}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/BesucherGeburtsdatum">
+                <Annotation Term="Common.Label" String="{@i18n>BesucherGeburtsdatum}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/BesucherAlter">
+                <Annotation Term="Common.Label" String="{@i18n>BesucherAlter}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/BesucherEmail">
+                <Annotation Term="Common.Label" String="{@i18n>BesucherEmail}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/BesucherTelefon">
+                <Annotation Term="Common.Label" String="{@i18n>BesucherTelefon}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/BesucherAdresse">
+                <Annotation Term="Common.Label" String="{@i18n>BesucherAdresse}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/BesucherRegistrierung">
+                <Annotation Term="Common.Label" String="{@i18n>BesucherRegistrierung}" />
+            </Annotations>
+
+            <!-- ========================== -->
+            <!-- Ticket -->
+            <!-- ========================== -->
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/TicketTypURL">
+                <Annotation Term="Common.Label" String="{@i18n>TicketTypURL}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/TicketIstGueltigURL">
+                <Annotation Term="Common.Label" String="{@i18n>TicketIstGueltigURL}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/TicketSitzplatznummer">
+                <Annotation Term="Common.Label" String="{@i18n>TicketSitzplatznummer}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/BesucherSitzReihe">
+                <Annotation Term="Common.Label" String="{@i18n>BesucherSitzReihe}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/TicketQrCode">
+                <Annotation Term="Common.Label" String="{@i18n>TicketQrCode}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/TicketQrCodeCFoto">
+                <Annotation Term="Common.Label" String="{@i18n>TicketQrCodeCFoto}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/TicketQrCodeDFoto">
+                <Annotation Term="Common.Label" String="{@i18n>TicketQrCodeDFoto}" />
+            </Annotations>
+
+            <!-- ========================== -->
+            <!-- Payment -->
+            <!-- ========================== -->
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/ZeitkategorieURL">
+                <Annotation Term="Common.Label" String="{@i18n>ZeitkategorieURL}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/ZahlungsstatusURL">
+                <Annotation Term="Common.Label" String="{@i18n>ZahlungsstatusURL}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/Zahlungsart">
+                <Annotation Term="Common.Label" String="{@i18n>Zahlungsart}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/ZahlungsartURL">
+                <Annotation Term="Common.Label" String="{@i18n>ZahlungsartURL}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/TicketPreis">
+                <Annotation Term="Common.Label" String="{@i18n>TicketPreis}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/Rabatt">
+                <Annotation Term="Common.Label" String="{@i18n>Rabatt}" />
+            </Annotations>
+
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type">
+            
+                <Annotation Term="UI.PresentationVariant">
+                    <Record>
+                        <PropertyValue Property="Visualizations">
+                            <Collection>
+                                <AnnotationPath>@UI.LineItem</AnnotationPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="SortOrder">
+                            <Collection>
+                                <Record Type="Common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="Betrag" />
+                                    <PropertyValue Property="Descending" Bool="true" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MitarbeiterFoto"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Verkaufsdatum"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BesucherName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Criticality" Path="ErlaubnisKritikalitaet"/>
+                            <PropertyValue Property="Value" Path="BesucherIstErlaubt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BesucherAltersgruppeURL"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TicketTypURL"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TicketIstGueltigURL"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ZeitkategorieURL"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ZahlungsstatusURL"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ZahlungsartURL"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TicketPreis"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Rabatt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Betrag"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Vorstellungsdatum"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TicketSitzplatznummer"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="VorstellungStartzeit"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BesucherSitzReihe"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="VorstellungEndzeit"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="VorstellungSprache"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="VorstellungUntertitel"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="VorstellungFormat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="VorstellungStatus"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FilmTitel"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FilmGenre"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FilmDauerMinuten"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FilmAltersfreigabe"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FilmProduktionsjahr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FilmRegisseur"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MitarbeiterId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MitarbeiterName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MitarbeiterGeburtsdatum"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MitarbeiterRolle"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MitarbeiterAbteilung"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MitarbeiterGehalt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MitarbeiterKontaktinfo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="KinoName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="KinoEroeffnungsdatum"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="KinoAdresse"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="KinoPlz"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="KinoStadt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="KinoAnzahlRaeume"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="KinoKontaktinfo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="RaumName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="RaumSitzplaetze"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="RaumAusstattung"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BesucherGeburtsdatum"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BesucherAlter"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BesucherEmail"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BesucherTelefon"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BesucherAdresse"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BesucherRegistrierung"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TicketQrCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TicketQrCodeCFoto"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TicketQrCodeDFoto"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Price"/>
+                            <PropertyValue Property="Value" Path="_Ticket/Preis"/>
+                            <PropertyValue Property="Criticality" Path="RabattKritikalitaet"/>
+                            <PropertyValue Property="CriticalityRepresentation" EnumMember="UI.CriticalityRepresentationType/WithIcon"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/Betrag">
+                <Annotation Term="Common.Label" String="{@i18n>Betrag}" />
+            </Annotations>
+
+            <!-- ========================== -->
+            <!-- Screening -->
+            <!-- ========================== -->
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/Vorstellungsdatum">
+                <Annotation Term="Common.Label" String="{@i18n>Vorstellungsdatum}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/VorstellungStartzeit">
+                <Annotation Term="Common.Label" String="{@i18n>VorstellungStartzeit}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/VorstellungEndzeit">
+                <Annotation Term="Common.Label" String="{@i18n>VorstellungEndzeit}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/VorstellungSprache">
+                <Annotation Term="Common.Label" String="{@i18n>VorstellungSprache}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/VorstellungUntertitel">
+                <Annotation Term="Common.Label" String="{@i18n>VorstellungUntertitel}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/VorstellungFormat">
+                <Annotation Term="Common.Label" String="{@i18n>VorstellungFormat}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/VorstellungStatus">
+                <Annotation Term="Common.Label" String="{@i18n>VorstellungStatus}" />
+            </Annotations>
+
+            <!-- ========================== -->
+            <!-- Movie -->
+            <!-- ========================== -->
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/FilmTitel">
+                <Annotation Term="Common.Label" String="{@i18n>FilmTitel}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/FilmGenre">
+                <Annotation Term="Common.Label" String="{@i18n>FilmGenre}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/FilmDauerMinuten">
+                <Annotation Term="Common.Label" String="{@i18n>FilmDauerMinuten}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/FilmAltersfreigabe">
+                <Annotation Term="Common.Label" String="{@i18n>FilmAltersfreigabe}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/FilmProduktionsjahr">
+                <Annotation Term="Common.Label" String="{@i18n>FilmProduktionsjahr}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/FilmRegisseur">
+                <Annotation Term="Common.Label" String="{@i18n>FilmRegisseur}" />
+            </Annotations>
+
+            <!-- ========================== -->
+            <!-- Employee -->
+            <!-- ========================== -->
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/MitarbeiterId">
+                <Annotation Term="Common.Label" String="{@i18n>MitarbeiterId}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/MitarbeiterName">
+                <Annotation Term="Common.Label" String="{@i18n>MitarbeiterName}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/MitarbeiterGeburtsdatum">
+                <Annotation Term="Common.Label" String="{@i18n>MitarbeiterGeburtsdatum}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/MitarbeiterRolle">
+                <Annotation Term="Common.Label" String="{@i18n>MitarbeiterRolle}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/MitarbeiterAbteilung">
+                <Annotation Term="Common.Label" String="{@i18n>MitarbeiterAbteilung}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/MitarbeiterGehalt">
+                <Annotation Term="Common.Label" String="{@i18n>MitarbeiterGehalt}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/MitarbeiterKontaktinfo">
+                <Annotation Term="Common.Label" String="{@i18n>MitarbeiterKontaktinfo}" />
+            </Annotations>
+
+            <!-- ========================== -->
+            <!-- Cinema -->
+            <!-- ========================== -->
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/KinoName">
+                <Annotation Term="Common.Label" String="{@i18n>KinoName}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/KinoEroeffnungsdatum">
+                <Annotation Term="Common.Label" String="{@i18n>KinoEroeffnungsdatum}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/KinoAdresse">
+                <Annotation Term="Common.Label" String="{@i18n>KinoAdresse}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/KinoPlz">
+                <Annotation Term="Common.Label" String="{@i18n>KinoPlz}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/KinoStadt">
+                <Annotation Term="Common.Label" String="{@i18n>KinoStadt}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/KinoAnzahlRaeume">
+                <Annotation Term="Common.Label" String="{@i18n>KinoAnzahlRaeume}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/KinoKontaktinfo">
+                <Annotation Term="Common.Label" String="{@i18n>KinoKontaktinfo}" />
+            </Annotations>
+
+            <!-- ========================== -->
+            <!-- Room -->
+            <!-- ========================== -->
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/RaumName">
+                <Annotation Term="Common.Label" String="{@i18n>RaumName}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/RaumSitzplaetze">
+                <Annotation Term="Common.Label" String="{@i18n>RaumSitzplaetze}" />
+            </Annotations>
+            <Annotations Target="SAP__self.ZSS25_R4C_C_VERKF_A3Type/RaumAusstattung">
+                <Annotation Term="Common.Label" String="{@i18n>RaumAusstattung}" />
+            </Annotations>
+
+            <!-- Filter / Selection Field -->
+            <Annotation Term="UI.SelectionFields">
+                <Collection>
+                    <PropertyPath>BesucherName</PropertyPath>
+                </Collection>
+            </Annotation>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>

@@ -73,7 +73,8 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.fe.templates": {}
+        "sap.fe.templates": {},
+        "sap.f": {}
       }
     },
     "contentDensities": {
@@ -106,17 +107,28 @@
       "css": []
     },
     "routing": {
-      "config": {},
+      "config": {
+        "flexibleColumnLayout": {
+          "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+          "defaultThreeColumnLayoutType": "ThreeColumnsEndExpanded"
+        },
+        "routerClass": "sap.f.routing.Router"
+      },
       "routes": [
         {
           "pattern": ":?query:",
           "name": "ZSS25_R4C_C_VERKF_A3List",
-          "target": "ZSS25_R4C_C_VERKF_A3List"
+          "target": [
+            "ZSS25_R4C_C_VERKF_A3List"
+          ]
         },
         {
           "pattern": "ZSS25_R4C_C_VERKF_A3({key}):?query:",
           "name": "ZSS25_R4C_C_VERKF_A3ObjectPage",
-          "target": "ZSS25_R4C_C_VERKF_A3ObjectPage"
+          "target": [
+            "ZSS25_R4C_C_VERKF_A3List",
+            "ZSS25_R4C_C_VERKF_A3ObjectPage"
+          ]
         }
       ],
       "targets": {
@@ -138,12 +150,16 @@
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
-                    "type": "ResponsiveTable"
+                    "type": "ResponsiveTable",
+                    "selectionMode": "Single"
                   }
                 }
-              }
+              },
+              "initialLoad": "Enabled"
             }
-          }
+          },
+          "controlAggregation": "beginColumnPages",
+          "contextPattern": ""
         },
         "ZSS25_R4C_C_VERKF_A3ObjectPage": {
           "type": "Component",
@@ -154,9 +170,17 @@
               "editableHeaderContent": false,
               "contextPath": "/ZSS25_R4C_C_VERKF_A3"
             }
-          }
+          },
+          "controlAggregation": "midColumnPages",
+          "contextPattern": "/ZSS25_R4C_C_VERKF_A3({key})"
         }
       }
+    },
+    "rootView": {
+      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+      "type": "XML",
+      "async": true,
+      "id": "appRootView"
     }
   },
   "sap.fiori": {

@@ -1,0 +1,29 @@
+{
+  "generationParameters": {
+    "generationDate": "Fri Oct 17 2025 15:15:30 GMT+0200 (Central European Summer Time)",
+    "generatorPlatform": "Visual Studio Code",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "https://fk-feedback-test.mni.thm.de:4343/sap/opu/odata4/sap/zss25_r4c_sb_kino_a5/srvd/sap/zss25_r4c_sd_kino_a4/0001/",
+    "appName": "zss25_r4c_kino",
+    "appTitle": "Kinoverwaltung",
+    "appDescription": "Fiori App zur Verwaltung von Kinos",
+    "appNamespace": "com.zss25.learnr4c.kinoverwaltung",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.108.33",
+    "enableCodeAssist": false,
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.18.7",
+    "template": "List Report Page V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "ZSS25_R4C_C_VERKF_A3"
+      }
+    ],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}

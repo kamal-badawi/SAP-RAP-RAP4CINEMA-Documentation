@@ -1,0 +1,166 @@
+{
+  "_version": "1.48.0",
+  "sap.app": {
+    "id": "com.zss25.learnr4c.kinoverwaltung.zss25r4ckino",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.18.7",
+      "toolsId": "3d0e6fed-d1dc-42e3-8fef-ecf7dc794c81"
+    },
+    "dataSources": {
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml",
+        "settings": {
+          "localUri": "annotations/annotation.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata4/sap/zss25_r4c_sb_kino_a5/srvd/sap/zss25_r4c_sd_kino_a4/0001/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "annotation"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "kinos-manage": {
+          "semanticObject": "kinos",
+          "action": "manage",
+          "title": "{{kinos-manage.flpTitle}}",
+          "subTitle": "{{kinos-manage.flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.108.33",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.zss25.learnr4c.kinoverwaltung.zss25r4ckino.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ZSS25_R4C_C_VERKF_A3List",
+          "target": "ZSS25_R4C_C_VERKF_A3List"
+        },
+        {
+          "pattern": "ZSS25_R4C_C_VERKF_A3({key}):?query:",
+          "name": "ZSS25_R4C_C_VERKF_A3ObjectPage",
+          "target": "ZSS25_R4C_C_VERKF_A3ObjectPage"
+        }
+      ],
+      "targets": {
+        "ZSS25_R4C_C_VERKF_A3List": {
+          "type": "Component",
+          "id": "ZSS25_R4C_C_VERKF_A3List",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/ZSS25_R4C_C_VERKF_A3",
+              "variantManagement": "Page",
+              "navigation": {
+                "ZSS25_R4C_C_VERKF_A3": {
+                  "detail": {
+                    "route": "ZSS25_R4C_C_VERKF_A3ObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ZSS25_R4C_C_VERKF_A3ObjectPage": {
+          "type": "Component",
+          "id": "ZSS25_R4C_C_VERKF_A3ObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ZSS25_R4C_C_VERKF_A3"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}
